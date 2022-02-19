@@ -21,10 +21,7 @@ app.use(routes);
 // Connect to the Mongo DB
 // mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/my_book_shelf");
 const uri = process.env.ATLAS_URI;
-mongoose.connect(uri, {
-  //   useNewUrlParser: true,
-  //   useCreateIndex: true,
-});
+mongoose.connect(uri);
 const connection = mongoose.connection;
 connection.once("open", () => {
   console.log("MongoDB database connection established");
