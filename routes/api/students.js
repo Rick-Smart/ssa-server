@@ -10,5 +10,6 @@ router
   .get(studentController.findById)
   .delete(studentController.deleteOne)
   .put(studentController.updateBooks)
-  .post(studentController.addBooks);
+  .post(studentController.addBooks)
+  .patch(studentController.removeBooks)
 module.exports = router;

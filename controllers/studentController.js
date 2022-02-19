@@ -41,4 +41,9 @@ module.exports = {
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },
+  removeBooks: function (req, res) {
+    db.Student.updateOne({ id: req.params.id }, { $unset: { books: [] } })
+      .then((dbModel) => res.json(dbModel))
+      .catch((err) => res.status(422).json(err));
+  },
 };
