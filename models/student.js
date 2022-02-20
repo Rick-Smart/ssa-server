@@ -5,8 +5,12 @@ const studentSchema = new Schema({
   name: { type: String, required: true },
   class: { type: String, required: true },
   email: { type: String, required: true },
-  books: [],
-  created: { type: Date, default: new Date(Date.now()) },
+  books: {
+    type: mongoose.SchemaTypes.ObjectId,
+    ref: "Book",
+  },
+  created: { type: Date, default: () => Date.now() },
+  updated: { type: Date, default: () => Date.now() },
 });
 
 const Student = mongoose.model("Student", studentSchema);
