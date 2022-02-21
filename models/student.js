@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const studentSchema = new Schema({
   name: { type: String, required: true },
-  class: { type: String, required: true },
+  class: { type: Number, required: true },
   email: { type: String, required: true },
   books: {
     type: mongoose.SchemaTypes.ObjectId,
