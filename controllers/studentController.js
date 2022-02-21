@@ -50,7 +50,7 @@ module.exports = {
     console.log(req.body);
     db.Student.updateOne(
       { _id: req.params.id },
-      { $push: { books: req.body.book } }
+      { $push: { books: req.body._id } }
     )
       .then((data) => {
         console.log(data);

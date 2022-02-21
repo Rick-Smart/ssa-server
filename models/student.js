@@ -6,7 +6,7 @@ const studentSchema = new Schema({
   class: { type: Number, required: true },
   email: { type: String, required: true },
   books: {
-    type: mongoose.SchemaTypes.ObjectId,
+    type: [mongoose.SchemaTypes.ObjectId],
     ref: "Book",
   },
   created: { type: Date, default: () => Date.now() },
