@@ -2,7 +2,9 @@ const router = require("express").Router();
 const studentController = require("../../controllers/studentController");
 
 // Matches with "/api/students"
-router.route("/").get(studentController.findAll).post(studentController.create);
+router.route("/")
+.get(studentController.findAll)
+.post(studentController.create);
 
 // Matches with "/api/students/:id"
 router
@@ -11,5 +13,5 @@ router
   .delete(studentController.deleteOne)
   .put(studentController.updateBooks)
   .post(studentController.addBooks)
-  .patch(studentController.removeBooks)
+  .patch(studentController.checkOut);
 module.exports = router;
