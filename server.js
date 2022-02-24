@@ -10,8 +10,7 @@ app.use(express.json());
 // Add API routes
 app.use(routes);
 // Connect to the Mongo DB
-const uri = process.env.ATLAS_URI;
-mongoose.connect(uri);
+mongoose.connect(process.env.ATLAS_URI);
 const connection = mongoose.connection;
 connection.once("open", () => {
   console.log("MongoDB database connection established");

@@ -46,14 +46,14 @@ module.exports = {
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },
-  checkOut: function (req, res) {
-    console.log(req.body);
+  checkOutBook: function (req, res) {
+    // console.log(req.body);
     db.Student.updateOne(
       { _id: req.params.id },
       { $push: { books: req.body._id } }
     )
       .then((data) => {
-        console.log(data);
+        // console.log("student controller" + data);
       })
       .then((data) => res.json(data))
       .catch((err) => res.status(422).json(err));

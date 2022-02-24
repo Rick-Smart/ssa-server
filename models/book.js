@@ -8,6 +8,7 @@ const bookSchema = new Schema({
   image: { type: String, required: true },
   link: { type: String, required: true },
   rating: { type: Number, default: 2.5 },
+  owned: { type: Boolean, default: true },
   checkedOut: { type: Boolean, default: false },
 });
 

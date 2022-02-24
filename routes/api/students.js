@@ -11,5 +11,5 @@ router
   .delete(studentController.deleteOne)
   .put(studentController.updateBooks)
   .post(studentController.addBooks)
-  .patch(studentController.checkOut);
+  .patch(studentController.checkOutBook);
 module.exports = router;
