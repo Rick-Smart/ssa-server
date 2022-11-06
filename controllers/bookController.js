@@ -13,6 +13,12 @@ module.exports = {
       .then((data) => res.json(data))
       .catch((err) => res.status(422).json(err));
   },
+  findManyByID: function (req, res) {
+    console.log(req.body);
+    db.Book.find({ _id: { $in: req.body } })
+      .then((data) => res.json(data))
+      .catch((err) => res.status(422).json(err));
+  },
   create: function (req, res) {
     db.Book.find({ title: req.body.title })
       .then((data) => {

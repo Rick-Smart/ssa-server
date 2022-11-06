@@ -13,7 +13,7 @@ app.use(routes);
 mongoose.connect(process.env.ATLAS_URI);
 const connection = mongoose.connection;
 connection.once("open", () => {
-  console.log("MongoDB database connection established");
+  console.log("🌎  ==> MongoDB database connection established");
 });
 // Start the API server
 app.listen(PORT, function () {
