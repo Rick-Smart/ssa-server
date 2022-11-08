@@ -1,5 +1,5 @@
 {
-  "name": "book-shelf-server",
+  "name": "ssa-server",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Rick-Smart/book-shelf-server.git"
+    "url": "git+https://github.com/Rick-Smart/ssa-server.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Rick-Smart/book-shelf-server/issues"
+    "url": "https://github.com/Rick-Smart/ssa-server/issues"
   },
-  "homepage": "https://github.com/Rick-Smart/book-shelf-server#readme",
+  "homepage": "https://github.com/Rick-Smart/ssa-server#readme",
   "dependencies": {
     "axios": "^0.26.0",
     "dotenv": "^16.0.0",

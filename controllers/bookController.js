@@ -14,7 +14,6 @@ module.exports = {
       .catch((err) => res.status(422).json(err));
   },
   findManyByID: function (req, res) {
-    console.log(req.body);
     db.Book.find({ _id: { $in: req.body } })
       .then((data) => res.json(data))
       .catch((err) => res.status(422).json(err));
