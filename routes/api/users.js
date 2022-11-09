@@ -10,4 +10,7 @@ router
   .get(userController.findById)
   .delete(userController.deleteOne);
 
+// Matches with "/api/users/auth"
+router.route("/auth").post(userController.userAuth);
+
 module.exports = router;
