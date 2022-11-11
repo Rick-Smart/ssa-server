@@ -1,6 +1,6 @@
 require("dotenv").config();
-const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const bcrypt = require("bcrypt");
 
 const hashPassword = async (user) => {
   try {
@@ -13,6 +13,28 @@ const hashPassword = async (user) => {
     };
 
     return hashedUser;
+  } catch (error) {
+    return error;
+  }
+};
+
+const jwtSign = async (user) => {
+  const jwtDetails = {
+    id: user._id,
+    name: user.name,
+    email: user.email,
+  };
+  try {
+    if (jwtDetails) {
+      const accessToken = jwt.sign(
+        jwtDetails,
+        process.env.ACCESS_TOKEN_SECRET,
+        { expiresIn: "24h" }
+      );
+      return accessToken;
+    } else {
+      return false;
+    }
   } catch (error) {
     return error;
   }
@@ -53,4 +75,4 @@ const verifyToken = (request) => {
   });
 };
 
-module.exports = { hashPassword, authUser, verifyToken };
+module.exports = { hashPassword, authUser, verifyToken, jwtSign };

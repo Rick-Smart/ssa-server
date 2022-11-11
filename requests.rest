@@ -2,8 +2,8 @@ POST http://localhost:3001/api/users
 Content-Type: application/json
 
 {
-    "name": "rick",
-    "email": "ricksemail@email.com",
+    "name": "cassia Gehl",
+    "email": "cass@email.com",
     "password": "password"
 }
 
@@ -19,4 +19,16 @@ Content-Type: application/json
 {
     "name":"rick",
     "email":"ricksemail@email.com"
+}
+
+###
+
+POST http://localhost:3001/api/messages/usermessages
+Content-Type: application/json
+
+{
+    "title" : "Stuff about things",
+    "authors": "Rick Smart",
+    "description": "I love my muffins",
+    "image": "123456"
 }

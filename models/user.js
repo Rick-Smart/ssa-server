@@ -5,9 +5,13 @@ const userSchema = new Schema({
   name: { type: String, required: true },
   email: { type: String, required: true, unique: true },
   password: { type: String, required: true },
-  books: {
+  services: {
     type: [mongoose.SchemaTypes.ObjectId],
-    ref: "Book",
+    ref: "Services",
+  },
+  services: {
+    type: [mongoose.SchemaTypes.ObjectId],
+    ref: "Messages",
   },
   created: { type: Date, default: new Date(Date.now()) },
 });

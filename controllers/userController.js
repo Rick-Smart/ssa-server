@@ -17,6 +17,9 @@ module.exports = {
   create: async (req, res) => {
     const hashedUser = await auth.hashPassword(req.body);
     db.User.create(hashedUser)
+      .then((data) => {
+        return auth.jwtSign(data);
+      })
       .then((dbModel) => res.json(dbModel))
       .catch((err) => res.status(422).json(err));
   },
